@@ -10,8 +10,10 @@ export class CartService {
 
   items: Product[] = [];
 
+  selectedShippingId = 1;
+
   getShippingPrices() {
-    return this.http.get<{ type: string; price: number }[]>(
+    return this.http.get<{ id: number; type: string; price: number }[]>(
       '/assets/shipping.json'
     );
   }
@@ -37,5 +39,9 @@ export class CartService {
   clearCart() {
     this.items = [];
     return this.items;
+  }
+
+  setShipping(id: number) {
+    this.selectedShippingId = id;
   }
 }

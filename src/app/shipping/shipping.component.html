@@ -1,7 +1,12 @@
 <div class="container">
   <h3 class="title">Shipping Prices</h3>
 
-  <div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <div
+    [class.selected-item]="shippingSelectedId === shipping.id"
+    class="shipping-item"
+    (click)="setShipping(shipping.id)"
+    *ngFor="let shipping of shippingCosts | async"
+  >
     <span class="item-name">{{ shipping.type }}</span>
     <span class="item-price">{{ shipping.price | currency }}</span>
   </div>

@@ -9,9 +9,18 @@ import { CartService } from '../cart.service';
 export class ShippingComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
-  shippingCosts!: Observable<{ type: string; price: number }[]>;
+  shippingCosts!: Observable<{ id: number; type: string; price: number }[]>;
+  shippingSelectedId = 0;
 
   ngOnInit(): void {
     this.shippingCosts = this.cartService.getShippingPrices();
+    this.shippingSelectedId = this.cartService.selectedShippingId;
+  }
+
+  setShipping(id: number) {
+    if (this.cartService.selectedShippingId != id) {
+      this.cartService.setShipping(id);
+      this.shippingSelectedId = id;
+    }
   }
 }

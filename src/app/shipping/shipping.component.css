@@ -4,6 +4,7 @@
 }
 
 .shipping-item {
+  cursor: pointer;
   background-color: #ddd;
   padding: 1.2em;
   margin: 0.5em 0em;
@@ -26,3 +27,16 @@
   position: relative;
   font-weight: 750;
 }
+
+.selected-item {
+  background-color: blueviolet;
+}
+
+.selected-item .item-name {
+  color: aliceblue;
+}
+
+.selected-item .item-price {
+  color: aliceblue;
+}
+
