@@ -1,0 +1,9 @@
+.btn {
+  background-color: blueviolet;
+  border: none;
+  padding: 0.5em 0.7em;
+  margin: 0.4em 0;
+  cursor: pointer;
+  border-radius: 0.3em;
+  color: aliceblue;
+}

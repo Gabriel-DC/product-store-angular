@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.container-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.0em 1.5em;
+  border: 0.01em solid black;
+  margin: 0.7em;
+  border-radius: 0.5em;
+}
+
+.title {
+  padding: 0.4em 0;
+  cursor: pointer;
+}
+
+.notify-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.price {
+  position: relative;
+  font-size: large;
+  font-weight: 600;
+  color: blueviolet;
+}

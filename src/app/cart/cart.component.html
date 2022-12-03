@@ -1,0 +1,43 @@
+<div class="container">
+  <h3 class="title">Cart</h3>
+  <div *ngIf="items.length">
+    <p>
+      <a routerLink="/shipping">Shipping Prices</a>
+    </p>
+    <div class="cart-item" *ngFor="let item of items">
+      <span class="item-name">{{ item.name }}</span>
+      <span class="item-price">{{ item.price | currency }}</span>
+      <button
+        class="btn btn-remove"
+        (click)="removeItem(item.id)"
+        type="button"
+      >
+        Remove
+      </button>
+    </div>
+    <div class="bottom">
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div class="form-item">
+          <label for="name"> Name </label>
+          <input id="name" type="text" formControlName="name" />
+        </div>
+
+        <div class="form-item">
+          <label for="address"> Address </label>
+          <input id="address" type="text" formControlName="address" />
+        </div>
+        <button class="btn" type="submit">Purchase</button>
+      </form>
+      <p class="total">
+        TOTAL:
+        <span class="total-price">{{ total.toString() | currency }}</span>
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="!items.length">
+    <h3 class="no-items-message">
+      Oops... you don't have items on your cart, let's add some stuff =P
+    </h3>
+  </div>
+</div>

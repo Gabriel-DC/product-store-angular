@@ -1,0 +1,28 @@
+.header {
+  background-color: #333;
+  display: flex;
+  padding: 1em;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  user-select: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.title-2 {
+  color: blueviolet;
+}
+
+.btn {
+  padding: 0.4em 1.4em;
+  cursor: pointer;
+  border-radius: 0.3em;
+  border: none;
+  font-weight: 400;
+  font-size: medium;
+  background-color: blueviolet;
+  color: aliceblue;
+}

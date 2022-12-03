@@ -1,0 +1,21 @@
+<div class="container">
+  <div *ngFor="let product of products" class="container-item">
+    <h3
+      [routerLink]="['/products', product.id]"
+      [title]="product.name + ' details'"
+      class="title"
+    >
+      {{ product.name }}
+    </h3>
+    <p *ngIf="product.description" class="description">
+      {{ product.description }}
+    </p>
+    <div class="notify-price-container">
+      <app-product-alerts
+        (notify)="onNotify()"
+        [product]="product"
+      ></app-product-alerts>
+      <span class="price">{{ product.price | currency }}</span>
+    </div>
+  </div>
+</div>
